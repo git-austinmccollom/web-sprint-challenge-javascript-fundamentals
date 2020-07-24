@@ -22,8 +22,10 @@ only the animal_name and scientific_name of each animal. displayNames will be an
  pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
+console.log("----------arrays-callbacks.js----------")
+console.log("----------request 1----------")
 const displayNames = [];
-zooAnimals.forEach(function(item) {
+zooAnimals.forEach((item) =>{
   displayNames.push(`Name: ${item.animal_name}, Scientific: ${item.scientific_name}.`)
 });
 console.log(displayNames);
@@ -34,8 +36,8 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
 
 */
-
-const lowCaseAnimalNames = zooAnimals.map(function(animal) {
+console.log("----------request 2----------")
+const lowCaseAnimalNames = zooAnimals.map((animal) => {
   return animal.animal_name.toLowerCase()
 });
 console.log(lowCaseAnimalNames);
@@ -46,7 +48,8 @@ The zoos are concerned about animals with a lower population count. Using filter
 lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals = zooAnimals.filter(function(animal){
+console.log("----------request 3----------")
+const lowPopulationAnimals = zooAnimals.filter( (animal) => {
   return animal.population < 5;
 });
 console.log(lowPopulationAnimals);
@@ -58,7 +61,8 @@ The zoos need to know their total animal population across the United States. Fi
 the count.
 
 */
-let populationTotal = zooAnimals.reduce(function(accumulator, animal){
+console.log("----------request 4----------")
+let populationTotal = zooAnimals.reduce((accumulator, animal) => {
   return accumulator += animal.population;
 }, 0);
 console.log(populationTotal);
@@ -72,8 +76,9 @@ console.log(populationTotal);
   * The last parameter accepts a callback
   * The consume function should return the invocation of cb, passing a and b into cb as arguments
 */
-
-const consume = function(a, b, cb) {
+console.log("----------Callbacks----------")
+console.log("----------Step 1----------")
+const consume = (a, b, cb) => {
   return cb(a, b);
 }
 
@@ -82,30 +87,27 @@ const consume = function(a, b, cb) {
   * Create a function named multiply that returns the product of two numbers 
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
-
-const add = function(a, b){
+console.log("----------Step 2----------")
+const add = (a, b) => {
   return a + b;
 }
 
-const multiply = function(a,b){
+const multiply = (a,b) => {
   return a * b;
 }
 
-const greeting = function(first, last){
+const greeting = (first, last) => {
   return `Hello ${first} ${last}, nice to meet you!`
 }
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
+console.log("----------Step 3----------")
 console.log(consume(2, 2, add)); // 4
 console.log(consume(10, 16, multiply)); // 160
 console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
-
-
-
 
 /*
 
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
 */
-
